@@ -63,7 +63,7 @@ class _DayCell extends StatelessWidget {
             border: Border(
               top: BorderSide(color: Theme.of(context).dividerColor, width: 1),
               right:
-                  BorderSide(color: Theme.of(context).dividerColor, width: 1),
+              BorderSide(color: Theme.of(context).dividerColor, width: 1),
             ),
           ),
           child: MeasureSize(
@@ -76,14 +76,14 @@ class _DayCell extends StatelessWidget {
               children: [
                 isToday
                     ? _TodayLabel(
-                        date: date,
-                        dateTextStyle: dateTextStyle,
-                      )
+                  date: date,
+                  dateTextStyle: dateTextStyle,
+                )
                     : _DayLabel(
-                        date: date,
-                        visiblePageDate: visiblePageDate,
-                        dateTextStyle: dateTextStyle,
-                      ),
+                  date: date,
+                  visiblePageDate: visiblePageDate,
+                  dateTextStyle: dateTextStyle,
+                ),
                 EventLabels(date),
               ],
             ),
@@ -113,7 +113,7 @@ class _TodayLabel extends StatelessWidget {
         .copyWith(fontWeight: FontWeight.w500);
     final textStyle = caption.merge(dateTextStyle);
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 2),
+      margin: const EdgeInsets.symmetric(vertical: 2),
       height: 20,
       width: 20,
       decoration: BoxDecoration(

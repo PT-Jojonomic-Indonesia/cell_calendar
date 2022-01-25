@@ -27,9 +27,9 @@ class EventLabels extends StatelessWidget {
       DateTime date, List<CalendarEvent> events) {
     final res = events
         .where((event) =>
-            event.eventDate.year == date.year &&
-            event.eventDate.month == date.month &&
-            event.eventDate.day == date.day)
+    event.eventDate.year == date.year &&
+        event.eventDate.month == date.month &&
+        event.eventDate.day == date.day)
         .toList();
     return res;
   }
@@ -57,10 +57,10 @@ class EventLabels extends StatelessWidget {
         }
         final eventsOnTheDay = _eventsOnTheDay(date, events);
         final hasEnoughSpace =
-            _hasEnoughSpace(cellHeight, eventsOnTheDay.length);
+        _hasEnoughSpace(cellHeight, eventsOnTheDay.length);
         final maxIndex = _maxIndex(cellHeight, eventsOnTheDay.length);
         return ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: eventsOnTheDay.length,
           itemBuilder: (context, index) {
@@ -101,16 +101,19 @@ class _EventLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 4, bottom: 3),
+      margin: EdgeInsets.only(left: 1, right: 2, bottom: 3),
+      padding: EdgeInsets.symmetric(horizontal: 2),
       height: 13,
+      alignment: Alignment.center,
       width: double.infinity,
       color: event.eventBackgroundColor,
       child: Text(
         event.eventName,
         style: TextStyle(
-            color: event.eventTextColor,
-            fontWeight: FontWeight.bold,
-            fontSize: 11),
+          color: event.eventTextColor,
+          fontWeight: FontWeight.bold,
+          fontSize: 11,
+        ),
         textAlign: TextAlign.center,
         overflow: TextOverflow.ellipsis,
       ),
